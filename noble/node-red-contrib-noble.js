@@ -25,7 +25,7 @@ module.exports = function(RED) {
 
     var noble = require('noble');
     var os = require('os');
-    
+
     // The main node definition - most things happen in here
     function NobleScan(n) {
         // Create a RED node
@@ -174,7 +174,7 @@ module.exports = function(RED) {
             node.warn("Incorrect input, ignoring. See the documentation in the info tab. ");
         });
 
-    
+
         node.on("close", function() {
             // Called when the node is shutdown - eg on redeploy.
             // Allows ports to be closed, connections dropped etc.
@@ -185,7 +185,9 @@ module.exports = function(RED) {
         });
 
     }
-    
+
+
+
     // Register the node by name. This must be called before overriding any of the
     // Node functions.
     RED.nodes.registerType("scan ble",NobleScan);
